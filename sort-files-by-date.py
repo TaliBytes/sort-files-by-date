@@ -70,12 +70,12 @@ def sortFile(full_origin_path, filename, extension):
     # if the file already exists in the duplicates destination, change the filename to have current datetime on it
     if os.path.exists(f'{destdir}/{filename}{extension}'):
         filename = f'{filename}_{datetime.now().strftime("%Y-%m-%d-%H:%M:%S")}'
-        #print('detected duplicate in duplicates')
+        # print('detected duplicate in duplicates')
 
     full_dest_path = f'{destdir}/{filename}{extension}'
     try:
         shutil.move(full_origin_path, full_dest_path)
-        #print(f'moved {filename}{extension} to {full_dest_path}\n')
+        # print(f'moved {filename}{extension} to {full_dest_path}\n')
     except:
         print(f'failed to move {filename}{extension} to {full_dest_path}\n')
 
@@ -85,7 +85,7 @@ def sortFile(full_origin_path, filename, extension):
 
 
 
-#okay to sort... go!
+# okay to sort... go!
 if directory:
     # creat destination "sorted" folder
     if not os.path.exists(str(directory) + '/SORTED'):
